@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/latest/latest",
+    "pages/hotest/hotest",
+    "pages/node/node",
+    "pages/topicList/topicList",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "菜鸟帮帮",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":"true"
+  },
+  "tabBar": {
+    "color":"#000",
+    "selectedColor":"#56abe4",
+    "backgroundColor":"#fff",
+    "borderStyle":"white",
+    "list": [{
+      "pagePath": "pages/latest/latest",
+      "text": "岗位",
+      "iconPath":"images/latest.png",
+      "selectedIconPath":"images/lastest_on.png"
+    }, {
+      "pagePath": "pages/node/node",
+      "text": "我的简历",
+      "iconPath":"images/node.png",
+      "selectedIconPath":"images/node_on.png"
+    }]
+  }
+}
