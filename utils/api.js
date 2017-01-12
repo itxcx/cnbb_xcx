@@ -119,6 +119,11 @@ function _updateEdu()
 {
 return RESUME_URI+"edu/update";
 }
+//默认简历的详情
+function _getUserDefaultResumeDetail()
+{
+	return RESUME_URI+"user_default_resume?access_token="+access_token;
+}
 //返回token
 function _getAccessToken()
 {
@@ -142,5 +147,6 @@ module.exports = {
 	getEdu: _getEdu,
 	createEdu: _createEdu,
 	updateEdu: _updateEdu,
+	getUserDefaultResumeDetail: _getUserDefaultResumeDetail,
 	getAccessToken: _getAccessToken,
 };
