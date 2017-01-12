@@ -4,7 +4,8 @@
     "pages/hotest/hotest",
     "pages/node/node",
     "pages/topicList/topicList",
-    "pages/detail/detail"
+    "pages/detail/detail",
+     "pages/resume/resume"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -24,7 +25,7 @@
       "iconPath":"images/latest.png",
       "selectedIconPath":"images/lastest_on.png"
     }, {
-      "pagePath": "pages/node/node",
+      "pagePath": "pages/resume/resume",
       "text": "我的简历",
       "iconPath":"images/node.png",
       "selectedIconPath":"images/node_on.png"
