@@ -7,6 +7,9 @@ Page({
     formatDate:"",
     politics:"",
     description:"",
+    degree:"",
+    startdate:"",
+    enddate:"",
     hidden: false
   },
  
@@ -22,8 +25,12 @@ Page({
           detail: res.data,
           formatDate:Util.formatDate(res.data.info.birthday),
           politics:Util.transPolitics(res.data.info.politics),
-          description:res.data.info.tags.join(";")
-        })
+          description:res.data.info.tags.join(";"),
+           degree:res.data.edus.length>0?Util.transDegree(res.data.edus[0].degree):"",
+           startdate:res.data.edus.length>0?Util.formatShortDate(res.data.edus[0].sdate):"",
+           enddate:res.data.edus.length>0?Util.formatShortDate(res.data.edus[0].edate):"",
+        }),
+       
         setTimeout(function() {
           that.setData({
             hidden: true
