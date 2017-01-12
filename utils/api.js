@@ -1,4 +1,5 @@
 'use strict';
+var API_URI = 'http://192.168.0.145/api/';
 var POST_URI = 'http://183.195.157.158:7777/v1/post/';
 var RESUME_URI='http://183.195.157.158:5555/v1/resume/';
 var FILE_URI='http://183.195.157.158:8081/v1/file/';
@@ -26,7 +27,8 @@ var GET_REPLIES = 'replies/show.json';
 
 // 获取用户信息
 var GET_USERINFO = 'members/show.json';
-
+//获取岗位列表
+var GET_JOBLIST = 'joblist';
 function _obj2uri(obj){
 	return Object.keys(obj).map(function(k) {
 		return encodeURIComponent(k) + "=" + encodeURIComponent(obj[k]);
@@ -47,7 +49,7 @@ function _getTopicInfo(o) {
 } 
 //岗位列表
 function _getPostList(o){
-	return POST_URI+'search?size=20';
+	return API_URI+GET_JOBLIST+'search?size=20';
 }
 
 function _getHotestTopic(o) {
