@@ -1,0 +1,101 @@
+<view class="container">
+<!--头像-->
+<view class="resume-block">
+<p class="block-title">添加头像</p>
+ <view class="block-info" >
+     <view class="my-avatar">
+       <view class="avatar-img">
+         <image class="js_avatar_show" src="http://183.195.157.158:8081/v1/file/d/1473840753392" mode="widthFix" style="width:100%"/>                             </view>
+          
+     <button class="avatar-upload" ></button>
+      </view>
+     <view class="upload-text">点击更换</view>
+      <view class="upload-tips">上传正方形照片，展示最佳效果！</view>
+       </view>
+</view>
+<!--基本信息信息-->
+<view class="resume-block">
+    <p class="block-title">基本信息</p>
+   <view class="block-info">
+    <view class="resume-edit"><navigator url="resumebaseedit"  >编辑</navigator></view>
+  <view class="field-bar my-name">
+    <span class="field-name">姓名</span>
+     <span class="field-cont">张一博</span>
+    </view>
+   <view class="field-bar">
+   <span class="field-name">性别</span>
+    <span class="field-cont">男</span>
+      </view>
+      <view class="field-bar">
+      <span class="field-name">手机号码</span>
+                        <span class="field-cont">18521092362</span>
+                    </view>
+<view class="field-bar">
+  <span class="field-name">Email</span>
+   <span class="field-cont">zhangyibo@finance365.com</span>
+    </view>
+     <view class="field-bar">
+      <span class="field-name">出生日期</span>
+      <span class="field-cont">1993年04月02日</span>
+       </view>
+       <view class="field-bar">
+       <span class="field-name">实习居住地</span>
+        <span class="field-cont">上海市上海市人民路100号</span>
+        </view>
+     <view class="field-bar">
+        <span class="field-name">户口所在地</span>
+        <span class="field-cont">四川省成都市</span>
+            </view>
+          <view class="field-bar">
+           <span class="field-name">户口类型</span>
+          <span class="field-cont">城镇户口</span>
+           </view>
+           <view class="field-bar">
+        <span class="field-name">身份证号码</span>
+         <span class="field-cont">310102198402101259</span>
+     </view>
+      <view class="field-bar">
+       <span class="field-name">政治面貌</span>
+        <span class="field-cont">团员</span>
+          </view>
+         <view class="field-bar">
+            <span class="field-name">自我描述</span>
+            <span class="field-cont">社交达人；学习能力强；自信；宅；11111；2222；3333；444；5555；6666；gyugty；jgyhuygu；yuyu；yuyuy；uyuyuy；yuyuy</span>
+       </view>
+       </view>
+       </view>
+<!--教育经历-->
+<view class="resume-block">
+    <p class="block-title">教育经历</p>
+    <view class="block-info">
+    <view class="resume-edit"><navigator url="resumeeduedit"  >编辑</navigator></view>
+  <view class="field-bar my-name">
+    <span class="field-name">学校</span>
+      <span class="field-cont">中国人民大学</span>
+        </view> 
+        <view class="field-bar">
+           <span class="field-name">院系</span>
+             <span class="field-cont">国际学院</span>
+            </view> 
+            <view class="field-bar">
+           <span class="field-name">专业分类</span>
+        <span class="field-cont">经济金融类</span>
+         </view>
+         <view class="field-bar">
+     <span class="field-name">专业</span>
+       <span class="field-cont">金融专业</span>
+     </view> 
+     <view class="field-bar">
+        <span class="field-name">入校时间</span> <span class="field-cont">2014-09</span>
+    </view> 
+    <view class="field-bar">
+       <span class="field-name">毕业时间</span>
+         <span class="field-cont">2018-06</span>
+         </view> 
+          <view class="field-bar">
+          <span class="field-name">学历</span>
+         <span class="field-cont">本科</span>
+            </view>
+            </view>
+            </view>
+</view>

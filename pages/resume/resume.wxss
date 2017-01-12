@@ -1,0 +1,81 @@
+block-title {
+    color: #231815;
+    font-size: 1.125rem;
+    padding: 10px 0;
+    width: 100%;
+}
+.resume-block{
+    margin: 0 3% 10px 3%;
+    width: 94%;
+}
+.block-info{
+    padding: 20px 5%;
+    width: 100%;
+    background-color: #fff;
+    border: 1rpx solid #dcdddd;
+    box-sizing: border-box;
+    position: relative;
+}
+.my-avatar{
+    margin: 0 auto;
+    width: 90px;
+    height: 90px;
+    position: relative;
+}
+.avatar-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1.875rem;
+    overflow: hidden;
+}
+.upload-text{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    color: #8d8d8e;
+}
+ .upload-tips{
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    color: #ff3e3e;
+    font-size: .875rem;
+}
+.field-name {
+    color: #666464;
+    display: inline-block;
+    font-size: 1rem;
+    height: 20px;
+    line-height: 20px;
+    margin-right: 5%;
+    vertical-align: top;
+    width: 30%;
+}
+.field-bar{
+    width: 100%;
+    font-size: 0;
+}
+.field-cont{
+    display: inline-block;
+    width: 65%;
+    line-height: 20px;
+    font-size: 1rem;
+    color: #231815;
+    word-break: break-all;
+    vertical-align: top;
+}
+.resume-edit {
+    color: #2cb5a9;
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    right: 5%;
+    text-align: right;
+    top: 20px;
+    width: 60px;
+    z-index: 4;
+}
+.navigator-hover {
+    color:blue;
+}
