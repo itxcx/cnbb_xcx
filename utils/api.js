@@ -49,7 +49,7 @@ function _getTopicInfo(o) {
 } 
 //岗位列表
 function _getPostList(o){
-	return API_URI+GET_JOBLIST+'search?size=20';
+	return API_URI+GET_JOBLIST;
 }
 
 function _getHotestTopic(o) {
