@@ -44,7 +44,7 @@
         </view>
      <view class="field-bar">
         <span class="field-name">户口所在地</span>
-        <span class="field-cont">四川省成都市</span>
+        <span class="field-cont">{{detail.info.hk_province_name}}</span>
             </view>
           <view class="field-bar">
            <span class="field-name">户口类型</span>
