@@ -16,7 +16,7 @@ Page({
       url: Api.getUserDefaultResumeDetail(),
       success: function(res) {
         that.setData({
-          detail: res
+          detail: res.data
         })
         setTimeout(function() {
           that.setData({
