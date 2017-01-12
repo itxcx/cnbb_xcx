@@ -10,11 +10,42 @@ function formatTime(date) {
 
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
-
+//整数转年月日
+function formatDate(date) {
+  var year = Math.floor(date/10000)
+  var month =Math.floor(date%10000/100)
+  var day = date%100
+  return year+"年"+month+"月"+day+"日"
+}
 function transLocalTime(t) {
   return new Date(t * 1000);
 }
-
+//转换政治面貌
+function transPolitics(n)
+{
+  if(n==1)
+  return "团员";
+  else if(n==2)
+  return "党员";
+  else if(n==0)
+  return "其他";
+  else if(n==3)
+  return "群众";
+}
+//转换学历
+function transDegree(n)
+{
+  if(n==2)
+  return "本科";
+  else if(n==3)
+  return "硕士";
+  else if(n==1)
+  return "大专";
+  else if(n==0)
+  return "其他";
+  else if(n==4)
+  return "博士";
+}
 function formatNumber(n) {
   n = n.toString()
   return n[1] ? n : '0' + n
@@ -29,6 +60,9 @@ function json2Form(json) {
 }  
 module.exports = {
   formatTime: formatTime,
+  formatDate: formatDate,
   transLocalTime: transLocalTime,
-  json2Form:json2Form
+  json2Form:json2Form,
+  transPolitics:transPolitics,
+  transDegree:transDegree
 }
