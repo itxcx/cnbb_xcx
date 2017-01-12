@@ -1,6 +1,10 @@
 'use strict';
-var HOST_URI = 'https://www.v2ex.com/api/';
-
+var POST_URI = 'http://183.195.157.158:7777/v1/post/';
+var RESUME_URI='http://183.195.157.158:5555/v1/resume/';
+var FILE_URI='http://183.195.157.158:8081/v1/file/';
+var INFRA_URL="http://183.195.157.158:8182/v1/infrastructure/";
+var PASSPORT_URL="http://183.195.157.158:8181/v1/passport/";
+var access_token="L0RsWlh2S0xpeVFPU2tubDhNRldMZz09_A_09388f9a02";
 // 获取节点
 // 所有的节点
 var ALL_NODE = 'nodes/all.json';
@@ -41,11 +45,9 @@ function _getNodeInfo(o){
 function _getTopicInfo(o) {
 	return HOST_URI+GET_TOPICS+'?'+_obj2uri(o);
 } 
-
-function _getLatestTopic(o){
-	return 'http://api.cainiaobangbang.com:7777/v1/post/search?size=20';
-	//return 'http://183.195.157.158:7777/v1/post/search?size=10';
-	//return HOST_URI+LATEST_TOPIC+'?'+_obj2uri(o);
+//岗位列表
+function _getPostList(o){
+	return POST_URI+'search?size=20';
 }
 
 function _getHotestTopic(o) {
@@ -55,12 +57,90 @@ function _getHotestTopic(o) {
 function _getReplies(o){
 	return HOST_URI+GET_REPLIES+'?'+_obj2uri(o);
 }
-
+//获取简历列表
+function _getResumeList(){
+return RESUME_URI+"list/my?access_token="+access_token;
+}
+//上传文件
+function _uploadFile(){
+	return FILE_URI+"upload";
+}
+//投递
+function _deliver(){
+	return POST_URI+"deliver";
+}
+//岗位详情
+function _getPostDetail(id)
+{
+	return POST_URI+"/"+id;
+}
+//学校区域
+function _getSchoolAreas(code)
+{
+	return INFRA_URL+"areas?code="+code;
+}
+//居住区域
+function _getResideAreas(code)
+{
+return INFRA_URL+"areas?nohw=false&code="+code;
+}
+//创建简历
+function _createResume(name)
+{
+	return RESUME_URI+"create?access_token="+name+"&name="+name;
+}
+//简历基本信息
+function _getResumeBase(uid,resume_id)
+{
+	return RESUME_URI+"base/get?access_token="+access_token+"&uid="+uid+"&resume_id="+resume_id;
+}
+//创建简历基本信息
+function _createResumeBase()
+{
+	return RESUME_URI+"base/create";
+}
+//编辑简历基本信息
+function _updateResumeBase()
+{
+	return RESUME_URI+"base/update";
+}
+//获取单个教育经历
+function _getEdu(id)
+{
+return RESUME_URI+"edu/"+id+"?access_token="+access_token;
+}
+//创建教育经历
+function _createEdu()
+{
+	return RESUME_URI+"edu/create";
+}
+//更新教育经历
+function _updateEdu()
+{
+return RESUME_URI+"edu/update";
+}
+//返回token
+function _getAccessToken()
+{
+	return access_token;
+}
 module.exports = {
 	getAllNode: _getAllNode,
 	getNodeInfo: _getNodeInfo,
-	getLatestTopic: _getLatestTopic,
+	getLatestTopic: _getPostList,
 	getHotestTopic: _getHotestTopic,
 	getTopicInfo: _getTopicInfo,
-	getReplies: _getReplies
+	getReplies: _getReplies,
+	getResumeList:_getResumeList,
+	uploadFile: _uploadFile,
+	getPostDetail: _getPostDetail,
+	getSchoolAreas: _getSchoolAreas,
+	getResideAreas: _getResideAreas,
+	getResumeBase: _getResumeBase,
+	createResumeBase: _createResumeBase,
+	updateResumeBase: _updateResumeBase,
+	getEdu: _getEdu,
+	createEdu: _createEdu,
+	updateEdu: _updateEdu,
+	getAccessToken: _getAccessToken,
 };
