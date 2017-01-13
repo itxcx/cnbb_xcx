@@ -1,0 +1,30 @@
+.resume-edit{
+    width: 100%;
+}
+.edit-item{
+    margin-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    min-height: 30px;
+    border-bottom: 1px solid #dcdddd;
+    font-size: 0;
+}
+.field-input{
+    display: inline-block;
+    width: 65%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1rem;
+    color: #231815;
+     vertical-align: middle;
+}
+.field-name {
+    color: #666464;
+    display: inline-block;
+    font-size: 1rem;
+    height: 30px;
+    line-height: 30px;
+    margin-right: 5%;
+    vertical-align: top;
+    width: 30%;
+}
