@@ -5,7 +5,7 @@
  <view class="block-info" >
      <view class="my-avatar">
        <view class="avatar-img">
-         <image class="js_avatar_show" src="{{detail.info.avatar_url}}" mode="widthFix" style="width:100%"/>                             </view>
+         <image  class="js_avatar_show" src="{{source}}" mode="widthFix" style="width:100%"/>                             </view>
      <button class="avatar-upload" ></button>
       </view>
      <view class="upload-text">点击更换</view>

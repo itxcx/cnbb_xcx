@@ -1,5 +1,6 @@
 var Api = require('../../utils/api.js');
 var Util = require('../../utils/util.js');
+var app = getApp()
 Page({
   data: {
        detail: {},
@@ -10,7 +11,10 @@ Page({
     degree:"",
     startdate:"",
     enddate:"",
-    hidden: false
+    source:"",
+    source1:"",
+    hidden: false,
+      userInfo: {}
   },
  
   fetchData: function() {
@@ -23,14 +27,15 @@ Page({
       success: function(res) {
         that.setData({
           detail: res.data,
+          source:res.data.info.avatar_url==''?that.data.source1:res.data.info.avatar_url,
           formatDate:Util.formatDate(res.data.info.birthday),
           politics:Util.transPolitics(res.data.info.politics),
           description:res.data.info.tags.join(";"),
            degree:res.data.edus.length>0?Util.transDegree(res.data.edus[0].degree):"",
            startdate:res.data.edus.length>0?Util.formatShortDate(res.data.edus[0].sdate):"",
            enddate:res.data.edus.length>0?Util.formatShortDate(res.data.edus[0].edate):"",
+         
         }),
-       
         setTimeout(function() {
           that.setData({
             hidden: true
@@ -40,6 +45,17 @@ Page({
     })
   },
   onLoad: function () {
+    console.log('onLoad')
+    var that = this
+    //调用应用实例的方法获取全局数据
+    app.getUserInfo(function(userInfo){
+      //更新数据，页面自动渲染
+      that.setData({
+        userInfo:userInfo,
+        source1:userInfo.avatarUrl
+      })
+       console.log(userInfo.avatarUrl)
+    })
     this.fetchData();
   }
 })
