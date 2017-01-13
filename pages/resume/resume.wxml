@@ -5,10 +5,9 @@
  <view class="block-info" >
      <view class="my-avatar">
        <view class="avatar-img">
-         <image  class="js_avatar_show" src="{{source}}" mode="widthFix" style="width:100%"/>                             </view>
-     <button class="avatar-upload" ></button>
+         <image  class="js_avatar_show" src="{{source}}" mode="widthFix" style="width:100%" bindtap="uploadImage"/>                             </view>
       </view>
-     <view class="upload-text">点击更换</view>
+     <view class="upload-text" bindtap="uploadImage">点击更换</view>
       <view class="upload-tips">上传正方形照片，展示最佳效果！</view>
        </view>
 </view>

@@ -57,5 +57,31 @@ Page({
        console.log(userInfo.avatarUrl)
     })
     this.fetchData();
+  },
+  //上传图片
+  uploadImage:function(e){
+     var that = this
+   wx.chooseImage({
+  success: function(res) {
+    var tempFilePaths = res.tempFilePaths
+    wx.uploadFile({
+      url: Api.uploadFile(), 
+      //仅为示例，非真实的接口地址
+      filePath: tempFilePaths[0],
+      name: 'file',
+      formData:{
+        
+      },
+      success: function(res){
+        var file = res.data
+        //do something
+        console.log(file)
+         that.setData({
+        source:JSON.parse(file).path
+      })
+      }
+    })
+  }
+})
   }
 })
