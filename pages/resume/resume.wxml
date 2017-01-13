@@ -5,7 +5,7 @@
  <view class="block-info" >
      <view class="my-avatar">
        <view class="avatar-img">
-         <image class="js_avatar_show" src="http://183.195.157.158:8081/v1/file/d/1473840753392" mode="widthFix" style="width:100%"/>                             </view>
+         <image  class="js_avatar_show" src="{{source}}" mode="widthFix" style="width:100%"/>                             </view>
      <button class="avatar-upload" ></button>
       </view>
      <view class="upload-text">点击更换</view>
@@ -86,15 +86,15 @@
        <span class="field-cont" wx:if="{{detail.edus.length>0}}">{{detail.edus[0].major}}</span>
      </view> 
      <view class="field-bar">
-        <span class="field-name">入校时间</span> <span class="field-cont">2014-09</span>
+        <span class="field-name">入校时间</span> <span class="field-cont" wx:if="{{detail.edus.length>0}}">{{startdate}}</span>
     </view> 
     <view class="field-bar">
        <span class="field-name">毕业时间</span>
-         <span class="field-cont">2018-06</span>
+         <span class="field-cont">{{enddate}}</span>
          </view> 
           <view class="field-bar">
           <span class="field-name">学历</span>
-         <span class="field-cont">本科</span>
+         <span class="field-cont">{{degree}}</span>
             </view>
             </view>
             </view>

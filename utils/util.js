@@ -17,6 +17,12 @@ function formatDate(date) {
   var day = date%100
   return year+"年"+month+"月"+day+"日"
 }
+//短整数转年月
+function formatShortDate(date){
+ var year = Math.floor(date/100)
+  var month =date%100
+  return year+"-"+month
+}
 function transLocalTime(t) {
   return new Date(t * 1000);
 }
@@ -64,5 +70,6 @@ module.exports = {
   transLocalTime: transLocalTime,
   json2Form:json2Form,
   transPolitics:transPolitics,
-  transDegree:transDegree
+  transDegree:transDegree,
+  formatShortDate:formatShortDate
 }
