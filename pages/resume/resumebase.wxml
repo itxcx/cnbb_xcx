@@ -1,0 +1,48 @@
+<view class="resume-edit">
+  <view class="edit-item">
+  <span class="field-name">姓名</span>
+     <input class="field-input" name="fullname" type="text" value="{{resumebase.fullname}}" placeholder="姓名"/>
+     </view>
+     <view class="edit-item">
+       <span class="field-name">性别</span>
+       <picker class="field-input " name="gender" value="{{gender-1}}" range="{{genderarray2}}" bindchange="changeGender">
+       <view class="field-input">{{genderarray[gender]}}</view>
+      </picker>
+  </view>
+  <view class="edit-item">
+    <span class="field-name">手机</span>
+      <input class="field-input" type="number" value="{{resumebase.phone}}" name="mobile" placeholder="手机号码"/>
+    </view>
+   <view class="edit-item">
+     <span class="field-name">Email</span>
+   <input class="field-input" type="text" value="{{resumebase.email}}" name="email" placeholder="Email"/>
+   </view>
+ <view class="edit-item">
+   <span class="field-name">出生日期</span>
+   <picker class="field-input" name="birthday" value="{{birthday}}"  bindchange="changeBirthday" mode="date">
+       <view class="field-input">{{birthday}}</view>
+      </picker>
+    </view>
+    <view class="edit-item right">
+  <span class="field-name">实习居住地</span>
+      <span class="field-input js_sx_val" data-prov="31000000" data-city="31010000" onclick="setCity($(this),'sx')">上海市</span>
+       <input class="field-detail" type="text" name="post[address]" placeholder="详细街道信息" value="人民路100号" />
+                
+<input class="validate[required]" type="text" name="post[city_id]" value="31010000"></input>
+   </view>
+  <view class="edit-item right">
+     <span class="field-name">户口所在地</span>
+       <span class="field-input js_hk_val" data-prov="51000000" data-city="51010000" onclick="setCity($(this),'hk')">成都市</span>
+       <input type="hidden" name="post[hk_province_id]" value="51000000"></input>
+       <input type="text" class="validate[required]" name="post[hk_city_id]" value="51010000" ></input>
+ </view>
+  <view class="edit-item">
+      <input class="field-input" type="idcard" name="card_no" value="{{resumebase.card_no}}" placeholder="身份证号码"/>
+   </view>
+  <view class="edit-item">
+   <span class="field-name">户口类型</span>
+    <picker class="field-input" name="hk_type" value="{{hukou}}" range="{{hkarray}}" bindchange="changeHktype" >
+       <view class="field-input">{{hkarray[hukou]}}</view>
+      </picker>
+</view>
+</view>
