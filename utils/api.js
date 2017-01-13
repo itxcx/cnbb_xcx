@@ -106,6 +106,11 @@ function _updateResumeBase()
 {
 	return RESUME_URI+"base/update";
 }
+//更新头像
+function _updateAvatar()
+{
+	return RESUME_URI+"base/createorupdate_avatar"
+}
 //获取单个教育经历
 function _getEdu(id)
 {
@@ -151,4 +156,5 @@ module.exports = {
 	updateEdu: _updateEdu,
 	getUserDefaultResumeDetail: _getUserDefaultResumeDetail,
 	getAccessToken: _getAccessToken,
+	updateAvatar:_updateAvatar
 };
