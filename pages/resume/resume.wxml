@@ -53,14 +53,14 @@
         <span class="field-name">身份证号码</span>
          <span class="field-cont">{{detail.info.card_no}}</span>
      </view>
-      <view class="field-bar">
+      <!--<view class="field-bar">
        <span class="field-name">政治面貌</span>
         <span class="field-cont">{{politics}}</span>
           </view>
          <view class="field-bar">
             <span class="field-name">自我描述</span>
             <span class="field-cont">{{description}}</span>
-       </view>
+       </view>-->
        </view>
        </view>
 <!--教育经历-->
