@@ -1,7 +1,8 @@
-<view class="resume-edit">
+<form bindsubmit="formBindsubmit" bindreset="formReset">
+<view class="resume-edit" >
   <view class="edit-item">
   <span class="field-name">姓名</span>
-     <input class="field-input" name="fullname" type="text" value="{{resumebase.fullname}}" placeholder="姓名"/>
+     <input class="field-input" name="fullname" type="text" value="{{resumebase.fullname}}" placeholder=""></input>
      </view>
      <view class="edit-item">
        <span class="field-name">性别</span>
@@ -11,11 +12,11 @@
   </view>
   <view class="edit-item">
     <span class="field-name">手机</span>
-      <input class="field-input" type="number" value="{{resumebase.phone}}" name="mobile" placeholder="手机号码"/>
+      <input class="field-input" type="number" value="{{resumebase.phone}}" name="mobile" placeholder=""></input>
     </view>
    <view class="edit-item">
      <span class="field-name">Email</span>
-   <input class="field-input" type="text" value="{{resumebase.email}}" name="email" placeholder="Email"/>
+   <input class="field-input" type="text" value="{{resumebase.email}}" name="email" placeholder=""></input>
    </view>
  <view class="edit-item">
    <span class="field-name">出生日期</span>
@@ -24,22 +25,36 @@
       </picker>
     </view>
     <view class="edit-item right">
-  <span class="field-name">实习居住地</span>
-       <picker class="field-input " name="address" value="{{resumebase.province_code}}" range="{{provinces}}" bindchange="changeProvince1">
-       <view class="field-input">{{provinces[resumebase.province_code]}}</view>
+  <span class="field-name">实习居住省</span>
+       <picker class="field-input " name="province" value="{{provinceIndex}}" range="{{provinceNames}}" bindchange="changeProvince">
+       <view class="field-input">{{provinceNames[provinceIndex]}}</view>
       </picker>
-                
-<input class="validate[required]" type="text" name="post[city_id]" value="31010000"></input>
+   </view>
+    <view class="edit-item right">
+  <span class="field-name">实习居住市</span>
+       <picker class="field-input " name="city" value="{{cityIndex}}" range="{{cityNames}}" bindchange="changeCity">
+       <view class="field-input">{{cityNames[cityIndex]}}</view>
+      </picker>
+   </view>
+   <view class="edit-item">
+     <span class="field-name">具体地址</span>
+   <input class="field-input" type="text" value="{{resumebase.address}}" name="address" placeholder=""></input>
    </view>
   <view class="edit-item right">
-     <span class="field-name">户口所在地</span>
-       <span class="field-input js_hk_val" data-prov="51000000" data-city="51010000" onclick="setCity($(this),'hk')">成都市</span>
-       <input type="hidden" name="post[hk_province_id]" value="51000000"></input>
-       <input type="text" class="validate[required]" name="post[hk_city_id]" value="51010000" ></input>
+     <span class="field-name">户口所在省</span>
+         <picker class="field-input " name="hkprovince" value="{{hkprovinceIndex}}" range="{{provinceNames}}" bindchange="changehkProvince">
+       <view class="field-input">{{provinceNames[hkprovinceIndex]}}</view>
+      </picker>
  </view>
+  <view class="edit-item right">
+  <span class="field-name">户口所在市</span>
+       <picker class="field-input " name="hkcity" value="{{hkcityIndex}}" range="{{hkcityNames}}" bindchange="changehkCity">
+       <view class="field-input">{{hkcityNames[hkcityIndex]}}</view>
+      </picker>
+   </view>
   <view class="edit-item">
     <span class="field-name">身份证</span>
-      <input class="field-input" type="idcard" name="card_no" value="{{resumebase.card_no}}" placeholder=""/>
+      <input class="field-input" type="idcard" name="card_no" value="{{resumebase.card_no}}" placeholder=""></input>
    </view>
   <view class="edit-item">
    <span class="field-name">户口类型</span>
@@ -47,4 +62,6 @@
        <view class="field-input">{{hkarray[hukou]}}</view>
       </picker>
 </view>
+<button class="edit-save" formType="submit">保存</button>
 </view>
+</form>

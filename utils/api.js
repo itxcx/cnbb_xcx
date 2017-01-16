@@ -89,6 +89,7 @@ return INFRA_URL+"areas?nohw=true";
 //居住区域
 function _getResideAreas(code)
 {
+	console.log(code);
 return INFRA_URL+"areas?nohw=true&code="+code;
 }
 //创建简历
@@ -104,7 +105,7 @@ function _getResumeBase(uid,resume_id)
 //创建简历基本信息
 function _createResumeBase()
 {
-	return RESUME_URI+"base/create";
+	return RESUME_URI+"base/createorupdate_info";
 }
 //编辑简历基本信息
 function _updateResumeBase()
