@@ -81,10 +81,15 @@ function _getSchoolAreas(code)
 {
 	return INFRA_URL+"areas?code="+code;
 }
+//省
+function _getProvinces()
+{
+return INFRA_URL+"areas?nohw=true";
+}
 //居住区域
 function _getResideAreas(code)
 {
-return INFRA_URL+"areas?nohw=false&code="+code;
+return INFRA_URL+"areas?nohw=true&code="+code;
 }
 //创建简历
 function _createResume(name)
@@ -156,5 +161,6 @@ module.exports = {
 	updateEdu: _updateEdu,
 	getUserDefaultResumeDetail: _getUserDefaultResumeDetail,
 	getAccessToken: _getAccessToken,
-	updateAvatar:_updateAvatar
+	updateAvatar:_updateAvatar,
+	 getProvinces:_getProvinces
 };

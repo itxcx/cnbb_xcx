@@ -25,8 +25,9 @@
     </view>
     <view class="edit-item right">
   <span class="field-name">实习居住地</span>
-      <span class="field-input js_sx_val" data-prov="31000000" data-city="31010000" onclick="setCity($(this),'sx')">上海市</span>
-       <input class="field-detail" type="text" name="post[address]" placeholder="详细街道信息" value="人民路100号" />
+       <picker class="field-input " name="address" value="{{resumebase.province_code}}" range="{{provinces}}" bindchange="changeProvince1">
+       <view class="field-input">{{provinces[resumebase.province_code]}}</view>
+      </picker>
                 
 <input class="validate[required]" type="text" name="post[city_id]" value="31010000"></input>
    </view>
@@ -37,7 +38,8 @@
        <input type="text" class="validate[required]" name="post[hk_city_id]" value="51010000" ></input>
  </view>
   <view class="edit-item">
-      <input class="field-input" type="idcard" name="card_no" value="{{resumebase.card_no}}" placeholder="身份证号码"/>
+    <span class="field-name">身份证</span>
+      <input class="field-input" type="idcard" name="card_no" value="{{resumebase.card_no}}" placeholder=""/>
    </view>
   <view class="edit-item">
    <span class="field-name">户口类型</span>

@@ -8,7 +8,39 @@ Page({
         genderarray:new Array("","男","女"),
         genderarray2:new Array("男","女"),
         birthday:"",
-        hkarray:new Array("城镇户口","农村户口","集体户口")
+        hkarray:new Array("城镇户口","农村户口","集体户口"),
+        provinceNames:[],
+        provinceCodes:[]
+    },
+    fetchProvince:function(){
+      var that=this;
+       that.setData({
+      hidden: false
+    })
+       wx.request({
+      url: Api.getProvinces(),
+      success: function(res) {
+         var provinceCodes={};
+         var provinceNames={};
+         var i=0;
+           for(i=0;i<res.data.length;i++ ){
+             console.log(res.data[i].code);
+              provinceCodes[i]=res.data[i].code
+              provinceNames[i]=res.data[i].name
+           }
+           console.log(provinceCodes)
+            console.log(provinceNames)
+        that.setData({
+         provinceNames:provinceNames,
+         provinceCodes:provinceCodes
+        }),
+        setTimeout(function() {
+          that.setData({
+            hidden: true
+          })
+        }, 300)
+      }
+    })
     },
     //获取简历基本信息
   fetchData: function(uid,resumeid) {
@@ -59,6 +91,7 @@ Page({
     //调用应用实例的方法获取全局数据
    var uid=options.uid;
    var resumeid=options.resumeid;
+   this.fetchProvince();
     this.fetchData(uid,resumeid);
   },
 })
