@@ -30,6 +30,15 @@
     color:#333;
 }
 
+.topic-nor {
+    flex:1;
+    box-sizing:border-box;
+    padding-right:10rpx;
+    line-height: 1.4;
+    font-size:14px;
+    color:#333;
+}
+
 .topic-info {
     margin-bottom: 40rpx;
     color:#777;

@@ -29,6 +29,8 @@ var GET_REPLIES = 'replies/show.json';
 var GET_USERINFO = 'members/show.json';
 //获取岗位列表
 var GET_JOBLIST = 'joblist';
+//获取岗位详情
+var GET_JOBDESC = 'jobdetail';
 function _obj2uri(obj){
 	return Object.keys(obj).map(function(k) {
 		return encodeURIComponent(k) + "=" + encodeURIComponent(obj[k]);
@@ -72,9 +74,11 @@ function _deliver(){
 	return POST_URI+"deliver";
 }
 //岗位详情
-function _getPostDetail(id)
+function _getPostDetail(o)
 {
-	return POST_URI+"/"+id;
+	return 'http://192.168.0.145/weiapp/job/Jobdetail'+'?'+_obj2uri(o);
+	//return POST_URI+"/"+id;
+	//return API_URI+GET_JOBDESC+'?'+_obj2uri(o);
 }
 //学校区域
 function _getSchoolAreas(code)
@@ -134,13 +138,13 @@ function _getAccessToken()
 module.exports = {
 	getAllNode: _getAllNode,
 	getNodeInfo: _getNodeInfo,
-	getLatestTopic: _getPostList,
+	getPostList: _getPostList,
+	getPostDetail: _getPostDetail,
 	getHotestTopic: _getHotestTopic,
 	getTopicInfo: _getTopicInfo,
 	getReplies: _getReplies,
 	getResumeList:_getResumeList,
 	uploadFile: _uploadFile,
-	getPostDetail: _getPostDetail,
 	getSchoolAreas: _getSchoolAreas,
 	getResideAreas: _getResideAreas,
 	getResumeBase: _getResumeBase,
