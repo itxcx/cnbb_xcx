@@ -12,15 +12,15 @@ function formatTime(date) {
 }
 //整数转年月日
 function formatDate(date) {
-  var year = Math.floor(date/10000)
-  var month =Math.floor(date%10000/100)
-  var day = date%100
+  var year = date.toString().substr(0,4)
+  var month =date.toString().substr(4,2)
+  var day = date.toString().substr(6,2)
   return year+"年"+month+"月"+day+"日"
 }
 function formatDate2(date) {
-  var year = Math.floor(date/10000)
-  var month =Math.floor(date%10000/100)
-  var day = date%100
+  var year = date.toString().substr(0,4)
+  var month =date.toString().substr(4,2)
+  var day = date.toString().substr(6,2)
   //return new Date(year,month-1,day)
   return year+"-"+month+"-"+day
 }
