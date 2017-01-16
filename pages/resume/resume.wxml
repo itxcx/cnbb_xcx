@@ -5,10 +5,9 @@
  <view class="block-info" >
      <view class="my-avatar">
        <view class="avatar-img">
-         <image  class="js_avatar_show" src="{{source}}" mode="widthFix" style="width:100%"/>                             </view>
-     <button class="avatar-upload" ></button>
+         <image  class="js_avatar_show" src="{{source}}" mode="widthFix" style="width:100%" bindtap="uploadImage"/>                             </view>
       </view>
-     <view class="upload-text">点击更换</view>
+     <view class="upload-text" bindtap="uploadImage">点击更换</view>
       <view class="upload-tips">上传正方形照片，展示最佳效果！</view>
        </view>
 </view>
@@ -16,7 +15,7 @@
 <view class="resume-block">
     <p class="block-title">基本信息</p>
    <view class="block-info">
-    <view class="resume-edit"><navigator url="resumebaseedit"  >编辑</navigator></view>
+    <view class="resume-edit"><navigator url="../resume/resumebase?uid={{detail.base_info.uid}}&resumeid={{detail.base_info.id}}"  >编辑</navigator></view>
   <view class="field-bar my-name">
     <span class="field-name">姓名</span>
      <span class="field-cont">{{detail.info.fullname}}</span>
@@ -48,7 +47,7 @@
             </view>
           <view class="field-bar">
            <span class="field-name">户口类型</span>
-          <span class="field-cont">城镇户口</span>
+          <span class="field-cont">{{hukou}}</span>
            </view>
            <view class="field-bar">
         <span class="field-name">身份证号码</span>
@@ -68,7 +67,7 @@
 <view class="resume-block">
     <p class="block-title">教育经历</p>
     <view class="block-info">
-    <view class="resume-edit"><navigator url="resumeeduedit"  >编辑</navigator></view>
+    <view class="resume-edit"><navigator url="../resume/resumeedu"  >编辑</navigator></view>
   <view class="field-bar my-name">
     <span class="field-name">学校</span>
       <span class="field-cont" wx:if="{{detail.edus.length>0}}">{{detail.edus[0].school_name}}</span>

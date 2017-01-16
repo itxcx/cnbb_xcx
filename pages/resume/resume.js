@@ -13,10 +13,11 @@ Page({
     enddate:"",
     source:"",
     source1:"",
+    hukou:"",
     hidden: false,
       userInfo: {}
   },
- 
+ //获取简历基本信息
   fetchData: function() {
     var that = this;
     that.setData({
@@ -34,6 +35,7 @@ Page({
            degree:res.data.edus.length>0?Util.transDegree(res.data.edus[0].degree):"",
            startdate:res.data.edus.length>0?Util.formatShortDate(res.data.edus[0].sdate):"",
            enddate:res.data.edus.length>0?Util.formatShortDate(res.data.edus[0].edate):"",
+           hukou:Util.transHukou(res.data.info.hk_type)
          
         }),
         setTimeout(function() {
@@ -52,10 +54,54 @@ Page({
       //更新数据，页面自动渲染
       that.setData({
         userInfo:userInfo,
-        source1:userInfo.avatarUrl
+        source1:userInfo==undefined?"":userInfo.avatarUrl
       })
        console.log(userInfo.avatarUrl)
     })
     this.fetchData();
+  },
+  //上传图片
+  uploadImage:function(e){
+     var that = this
+   wx.chooseImage({
+  success: function(res) {
+    var tempFilePaths = res.tempFilePaths
+    wx.uploadFile({
+      url: Api.uploadFile(), 
+      filePath: tempFilePaths[0],
+      name: 'file',
+      formData:{
+        
+      },
+      success: function(res){
+        var file = res.data
+        //do something
+        console.log(file)
+         that.setData({
+        source:JSON.parse(file).path
+      })//设置头像地址结束
+      //更新数据库中的头像
+      wx.request({
+      url: Api.updateAvatar(),
+      header: {  
+        "Content-Type": "application/x-www-form-urlencoded"  
+      },  
+        method: "POST",  
+        data: Util.json2Form( { avatar_id: JSON.parse(file).file_id,access_token:Api.getAccessToken()}),  
+      success: function(res) {
+        that.setData({
+        }),
+        setTimeout(function() {
+          that.setData({
+            hidden: true
+          })
+        }, 300)
+      }
+    })
+    //更新数据库中的头像结束
+      }
+    })
+  }
+})
   }
 })

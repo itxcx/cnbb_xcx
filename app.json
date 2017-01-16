@@ -1,7 +1,7 @@
 {
   "pages":[
     "pages/job/job",
-    "pages/hotest/hotest",
+    "pages/resume/resumebase",
     "pages/node/node",
     "pages/topicList/topicList",
     "pages/detail/detail",
