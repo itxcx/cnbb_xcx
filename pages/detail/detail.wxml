@@ -5,16 +5,32 @@
         <image class="owner-avatar" src="{{detail.data.org.m_logo_url}}" id="{{detail.data.id}}" bindtap="showUserInfo"></image>
         <view class="topic-tit">{{detail.data.name}}</view>
         <view class="topic-nor">{{detail.data.last_time}}</view>
+        <view class="topic">{{detail.salary}}</view>
     </view>
-    <view class="topic-info">
-        <text>{{detail.member.username}}</text>
+    <view>
+        <text class="topic-desc-title">{{detail.salary}}</text>
         <text class="topic-created">{{detail.created}}</text>
     </view>
-    <view class="topic-desc">
-        <text>{{detail.data.post_remark}}</text>
+    <view class="topic-info">
+        <text >{{detail.weal_tags}}</text>
+    </view>
+    <view >
+        <text class="desc-title">岗位描述\n\n</text>
+        <text class="job-desc">{{detail.data.remark}}</text>
+    </view>
+    <view >
+        <text class="desc-title">\n\n岗位要求\n\n</text>
+        <text class="job-desc">{{detail.data.post_remark}}</text>
     </view>
   </view>
-  <loading hidden="{{hidden}}">
+  <view class="job-deliver">
+    <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 收藏 </button>
+
+<button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="primary"> 立即投递 </button>
+  </view>
+<loading hidden="{{hidden}}">
     加载中...
   </loading>
 </view>

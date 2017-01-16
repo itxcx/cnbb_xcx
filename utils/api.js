@@ -51,7 +51,8 @@ function _getTopicInfo(o) {
 } 
 //岗位列表
 function _getPostList(o){
-	return API_URI+GET_JOBLIST;
+	return 'http://www.cainiaobangbang.com/api/' + GET_JOBLIST;
+	//return API_URI+GET_JOBLIST;
 }
 
 function _getHotestTopic(o) {
@@ -76,7 +77,7 @@ function _deliver(){
 //岗位详情
 function _getPostDetail(o)
 {
-	return 'http://192.168.0.145/weiapp/job/Jobdetail'+'?'+_obj2uri(o);
+	return 'http://www.cainiaobangbang.com/weiapp/job/Jobdetail'+'?'+_obj2uri(o);
 	//return POST_URI+"/"+id;
 	//return API_URI+GET_JOBDESC+'?'+_obj2uri(o);
 }
