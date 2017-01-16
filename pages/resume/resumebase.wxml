@@ -1,5 +1,5 @@
 <form bindsubmit="formBindsubmit" bindreset="formReset">
-<view class="resume-edit" >
+<scroll-view class="resume-edit" scroll-y="true">
   <view class="edit-item">
   <span class="field-name">姓名</span>
      <input class="field-input" name="fullname" type="text" value="{{resumebase.fullname}}" placeholder=""></input>
@@ -63,5 +63,5 @@
       </picker>
 </view>
 <button class="edit-save" formType="submit">保存</button>
-</view>
+</scroll-view>
 </form>
