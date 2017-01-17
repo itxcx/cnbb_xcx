@@ -1,0 +1,53 @@
+<form bindsubmit="formBindsubmit" bindreset="formReset">
+<scroll-view class="resume-edit" scroll-y="true" bindscrolltolower="refresh">
+  <view class="edit-item">
+  <span class="field-name">学校所在地区</span>
+     <picker class="field-input " name="schoolprovince" value="{{schoolprovince}}" range="{{provinceNames}}" bindchange="changeProvince">
+       <view class="field-input">{{provinceNames[provinceIndex]}}</view>
+      </picker>
+     </view>
+
+      <view class="edit-item">
+  <span class="field-name">学校名称</span>
+     <picker class="field-input " name="school" value="{{schoolIndex}}" range="{{schoolNames}}" bindchange="changeSchool">
+       <view class="field-input">{{schoolNames[schoolIndex]}}</view>
+      </picker>
+     </view>
+     
+     <view class="edit-item">
+       <span class="field-name">院系</span>
+       <input class="field-input" value="{{resumeedu.faculty}}" name="faculty" placeholder=""></input>
+      
+  </view>
+  <view class="edit-item">
+    <span class="field-name">专业分类</span>
+      <picker class="field-input " name="majorCategory" value="{{majorIndex}}" range="{{majorNames}}" bindchange="changeMajorCategory">
+       <view class="field-input">{{majorNames[majorIndex]}}</view>
+      </picker>
+    </view>
+   <view class="edit-item">
+     <span class="field-name">专业</span>
+   <input class="field-input" type="text" value="{{resumeedu.major}}" name="major" placeholder=""></input>
+   </view>
+ <view class="edit-item">
+   <span class="field-name">入校时间</span>
+   <picker class="field-input" name="sdate" value="{{sdate}}"  bindchange="changeSdate" mode="date">
+       <view class="field-input">{{sdate}}</view>
+      </picker>
+    </view>
+    <view class="edit-item right">
+  <span class="field-name">毕业时间</span>
+       <picker class="field-input " name="edate" value="{{edate}}" mode="date" bindchange="changeEdate">
+        <view class="field-input">{{edate}}</view>
+      </picker>
+   </view>
+    <view class="edit-item right">
+  <span class="field-name">学历</span>
+       <picker class="field-input " name="degree" value="{{degreeIndex}}" range="{{degreeNames}}" bindchange="changeDegree">
+       <view class="field-input">{{degreeNames[degreeIndex]}}</view>
+      </picker>
+   </view>
+   
+<button class="edit-save" formType="submit">保存</button>
+</scroll-view>
+</form>

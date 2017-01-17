@@ -1,0 +1,41 @@
+.resume-edit{
+    width: 100%;
+}
+.edit-item{
+    margin-left: 5%;
+    padding-right: 5%;
+    width: 100%;
+    min-height: 40px;
+    border-bottom: 1px solid #dcdddd;
+    font-size: 0;
+}
+.field-input{
+    display: inline-block;
+    width: 65%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 1rem;
+    color: #231815;
+     vertical-align: middle;
+     overflow: hidden;
+}
+.field-name {
+    color: #666464;
+    display: inline-block;
+    font-size: 1rem;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 5%;
+    vertical-align: top;
+    width: 30%;
+}
+.edit-save {
+    background: #fdd108 none repeat scroll 0 0;
+    border-radius: 1.25rem;
+    color: #231815;
+    height: 40px;
+    line-height: 40px;
+    margin: 30px 10% 50px;
+    text-align: center;
+    width: 80%;
+}
