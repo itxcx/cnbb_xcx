@@ -5,7 +5,8 @@ var RESUME_URI='http://183.195.157.158:5555/v1/resume/';
 var FILE_URI='http://183.195.157.158:8081/v1/file/';
 var INFRA_URL="http://183.195.157.158:8182/v1/infrastructure/";
 var PASSPORT_URL="http://183.195.157.158:8181/v1/passport/";
-var access_token="L0RsWlh2S0xpeVFPU2tubDhNRldMZz09_A_09388f9a02";
+var //access_token="L0RsWlh2S0xpeVFPU2tubDhNRldMZz09_A_09388f9a02";
+access_token="ZEY2NUdQUWFtTkNONkFxNVFDbGdHQT09_A_0d9d029f49";
 // 获取节点
 // 所有的节点
 var ALL_NODE = 'nodes/all.json';
@@ -82,9 +83,14 @@ function _getPostDetail(o)
 	//return API_URI+GET_JOBDESC+'?'+_obj2uri(o);
 }
 //学校区域
-function _getSchoolAreas(code)
+function _getSchoolAreas()
 {
-	return INFRA_URL+"areas?code="+code;
+	return INFRA_URL+"areas";
+}
+//学校
+function _getSchool(code)
+{
+	return RESUME_URI+"school/list_by_province?province_id="+code;
 }
 //省
 function _getProvinces()
@@ -98,9 +104,9 @@ function _getResideAreas(code)
 return INFRA_URL+"areas?nohw=true&code="+code;
 }
 //创建简历
-function _createResume(name)
+function _createResume()
 {
-	return RESUME_URI+"create?access_token="+name+"&name="+name;
+	return RESUME_URI+"create";
 }
 //简历基本信息
 function _getResumeBase(uid,resume_id)
@@ -128,9 +134,9 @@ function _getEdu(id)
 return RESUME_URI+"edu/"+id+"?access_token="+access_token;
 }
 //创建教育经历
-function _createEdu()
+function _createEdu(edu_id)
 {
-	return RESUME_URI+"edu/create";
+	return RESUME_URI+"edu/create_update_default_edu";
 }
 //更新教育经历
 function _updateEdu()
@@ -141,6 +147,11 @@ return RESUME_URI+"edu/update";
 function _getUserDefaultResumeDetail()
 {
 	return RESUME_URI+"user_default_resume?access_token="+access_token;
+}
+//专业分类
+function _getMajorCategories()
+{
+	return RESUME_URI+"edu/major_categories?access_token="+access_token;
 }
 //返回token
 function _getAccessToken()
@@ -168,5 +179,7 @@ module.exports = {
 	getUserDefaultResumeDetail: _getUserDefaultResumeDetail,
 	getAccessToken: _getAccessToken,
 	updateAvatar:_updateAvatar,
-	 getProvinces:_getProvinces
+	 getProvinces:_getProvinces,
+	 getSchool:_getSchool,
+	 getMajorCategories:_getMajorCategories
 };

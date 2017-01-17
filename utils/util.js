@@ -12,23 +12,35 @@ function formatTime(date) {
 }
 //整数转年月日
 function formatDate(date) {
+    if(date!=null)
+  {
   var year = date.toString().substr(0,4)
   var month =date.toString().substr(4,2)
   var day = date.toString().substr(6,2)
   return year+"年"+month+"月"+day+"日"
+  }
+  return "";
 }
 function formatDate2(date) {
+   if(date!=null)
+  {
   var year = date.toString().substr(0,4)
   var month =date.toString().substr(4,2)
   var day = date.toString().substr(6,2)
   //return new Date(year,month-1,day)
   return year+"-"+month+"-"+day
+  }
+  return "";
 }
 //短整数转年月
 function formatShortDate(date){
- var year = Math.floor(date/100)
-  var month =date%100
+  if(date!=null)
+  {
+ var year = date.toString().substr(0,4);
+  var month =date.toString().substr(4,2)
   return year+"-"+month
+  }
+  return "";
 }
 function transLocalTime(t) {
   return new Date(t * 1000);

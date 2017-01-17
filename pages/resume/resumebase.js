@@ -36,7 +36,6 @@ Page({
            for(i=0;i<res.data.length;i++ ){
               provinceCodes[i]=res.data[i].code
               provinceNames[i]=res.data[i].name
-                console.log(that.data.resumebase.province_code)
               if(that.data.resumebase.province_code==provinceCodes[i])
               {
                  that.setData({provinceIndex:i});
@@ -222,7 +221,7 @@ Page({
         "Content-Type": "application/x-www-form-urlencoded"  
       },  
       method: "POST",   
-      data: Util.json2Form( { resume_id:that.data.resumebase,avatar_id:that.data.resumebase.avatar_id,full_name:e.detail.value.fullname,gender:that.data.gender,mobile:e.detail.value.mobile,email:e.detail.value.email,birthday:e.detail.value.birthday.replace(/-/g,""),
+      data: Util.json2Form( { resume_id:that.data.resume_id,avatar_id:that.data.resumebase.avatar_id,full_name:e.detail.value.fullname,gender:that.data.gender,mobile:e.detail.value.mobile,email:e.detail.value.email,birthday:e.detail.value.birthday.replace(/-/g,""),
       province_id:that.data.provinceCodes[that.data.provinceIndex],
       city_id:that.data.cityCodes[that.data.cityIndex],hk_type:that.data.hukou,hk_province_id:that.data.provinceCodes[that.data.hkprovinceIndex],hk_city_id:that.data.hkcityCodes[that.data.hkcityIndex],card_type:0,card_no:e.detail.value.card_no,
       address:e.detail.value.address,access_token:Api.getAccessToken() }),  
@@ -239,11 +238,12 @@ Page({
         }  
         else
         {
-          wx.showToast({
+          /*wx.showToast({
             title:'成功',
             icon:'success',
             duration:2000
-         });
+         });*/
+         wx.navigateBack();
         }
 
          setTimeout(function(){
@@ -261,8 +261,12 @@ Page({
     that.fetchData(uid,resumeid);
     that.setData({uid:uid,resumeid:resumeid});
   },
-  onPullDownRefresh:function(){
-    wx.stopPullDownRefresh();
+  refresh:function(){
+    var that=this;
+ that.fetchData(that.data.uid,that.data.resumeid);
+  },
+  onPullDownRefresh:function(e){
+  var that=this;
  that.fetchData(that.data.uid,that.data.resumeid);
   }
 })

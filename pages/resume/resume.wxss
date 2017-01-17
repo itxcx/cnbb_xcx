@@ -63,6 +63,7 @@ block-title {
     color: #231815;
     word-break: break-all;
     vertical-align: top;
+    
 }
 .resume-edit {
     color: #2cb5a9;
