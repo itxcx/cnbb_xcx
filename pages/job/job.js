@@ -76,17 +76,14 @@ Page({
  onReachBottom: function() {//下拉加载更多
   var p = this.data.p.page;
   var count = this.data.p.end_page;
-  count = 3;
+  var that = this;
+  count = 2;
   if (p > count){
-      that.setData({
-        hidden: false
-      });
-      setTimeout(function() {
-        that.setData({
-          msg:'后面没有了',
-          hidden: true
-        })
-      }, 300)
+        wx.showToast({
+          title:'没有更多了',
+          icon:'success',
+          duration:2000
+        }); 
       return false;
   }
     this.loadMore(p+1);

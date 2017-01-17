@@ -55,7 +55,7 @@ function _getTopicInfo(o) {
 } 
 //岗位列表
 function _getPostList(o){
-	//return 'http://www.cainiaobangbang.com/api/' + GET_JOBLIST;
+	//return 'http://www.cainiaobangbang.com/api/' + GET_JOBLIST+'?'+_obj2uri(o);
 	return API_URI+GET_JOBLIST+'?'+_obj2uri(o);
 }
 
@@ -75,15 +75,15 @@ function _uploadFile(){
 	return FILE_URI+"upload";
 }
 //投递
-function _deliver(){
+function _deliver(o){
 	return POST_URI+"deliver";
 }
 //岗位详情
 function _getPostDetail(o)
 {
-	return 'http://www.cainiaobangbang.com/weiapp/job/Jobdetail'+'?'+_obj2uri(o);
+	//return 'http://www.cainiaobangbang.com/weiapp/job/Jobdetail'+'?'+_obj2uri(o);
 	//return POST_URI+"/"+id;
-	//return API_URI+GET_JOBDESC+'?'+_obj2uri(o);
+	return API_URI+GET_JOBDESC+'?'+_obj2uri(o);
 }
 //学校区域
 function _getSchoolAreas(code)
@@ -172,5 +172,6 @@ module.exports = {
 	getUserDefaultResumeDetail: _getUserDefaultResumeDetail,
 	getAccessToken: _getAccessToken,
 	updateAvatar:_updateAvatar,
-	 getProvinces:_getProvinces
+	getProvinces:_getProvinces,
+	deliver:_deliver,
 };
