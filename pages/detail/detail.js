@@ -74,6 +74,7 @@ Page({
             btn_name:'已投递',
             disabled:true
           });
+          
           wx.showToast({
             title:'投递成功',
             icon:'success',
