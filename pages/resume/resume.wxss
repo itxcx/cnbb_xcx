@@ -57,7 +57,7 @@ block-title {
 }
 .field-cont{
     display: inline-block;
-    width: 65%;
+    width: 50%;
     line-height: 20px;
     font-size: 1rem;
     color: #231815;
