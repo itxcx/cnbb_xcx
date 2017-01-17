@@ -88,7 +88,7 @@ function formatNumber(n) {
 
 //时间转成时间戳
 function getDateTimeStamp(dateStr){
- return Date.parse(dateStr.replace(/-/gi,"/"));
+ return Date.parse(new Date(dateStr));
 }
 //时间转换成str
 function getDateDiff(dateTimeStamp){

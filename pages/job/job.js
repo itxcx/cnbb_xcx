@@ -1,5 +1,6 @@
 // latest.js
 var Api = require('../../utils/api.js');
+var Util = require('../../utils/util.js');
 
 Page({
   data: {
@@ -30,13 +31,19 @@ Page({
     })
     wx.request({
       url: Api.getPostList({
-        p: 1
+        page: 1
       }),
       success: function(res) {
         console.log(res);
+        for (var i = 0; i < res.data.posts.length ; i++) {
+          //console.log(Util.getDateTimeStamp(res.data.posts[i].last_time));
+          res.data.posts[i].last_time = Util.getDateDiff(Util.getDateTimeStamp(res.data.posts[i].last_time));
+        }
+        //res.data.data.last_time
         that.setData({
-          job: res.data.data ,
-          p:res.data.page
+          job: res.data.posts,
+          page:res.data.current_page,
+          end_page:res.data.pages
 
         })
         setTimeout(function() {
@@ -56,14 +63,18 @@ Page({
     })
     wx.request({
       url: Api.getPostList({
-        p: p?p:1
+        page: p?p:1
       }),
       success: function(res) {
-        //console.log(res);
+        for (var i = 0; i < res.data.posts.length ; i++) {
+          //console.log(Util.getDateTimeStamp(res.data.posts[i].last_time));
+          res.data.posts[i].last_time = Util.getDateDiff(Util.getDateTimeStamp(res.data.posts[i].last_time));
+        }
         console.log(that.data);
         that.setData({
-          job: that.data.job.concat(res.data.data),
-          p:res.data.page
+          job: that.data.job.concat(res.data.posts),
+          page:res.data.current_page,
+          end_page:res.data.pages
         })
         setTimeout(function() {
           that.setData({
@@ -74,9 +85,9 @@ Page({
     })
 },
  onReachBottom: function() {//下拉加载更多
-  var p = this.data.p.page;
-  var count = this.data.p.end_page;
   var that = this;
+  var p = that.data.page;
+  var count = that.data.end_page;
   count = 2;
   if (p > count){
         wx.showToast({

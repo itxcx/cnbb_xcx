@@ -57,7 +57,8 @@ function _getTopicInfo(o) {
 //岗位列表
 function _getPostList(o){
 	//return 'http://www.cainiaobangbang.com/api/' + GET_JOBLIST+'?'+_obj2uri(o);
-	return API_URI+GET_JOBLIST+'?'+_obj2uri(o);
+	//return API_URI+GET_JOBLIST+'?'+_obj2uri(o);
+	return POST_URI+"search"+'?'+_obj2uri(o);
 }
 
 function _getHotestTopic(o) {
