@@ -3,7 +3,8 @@
     "pages/job/job",
     "pages/resume/resumebase",
     "pages/detail/detail",
-     "pages/resume/resume"
+     "pages/resume/resume",
+     "pages/resume/resumeedu"
   ],
   "window":{
     "backgroundTextStyle":"light",
