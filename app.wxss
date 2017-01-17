@@ -28,8 +28,8 @@
 }
 
 .member-avatar {
-  width: 128rpx;
-  height: 128rpx;
+  width: 165rpx;
+  height: 165rpx;
   margin-right: 20rpx;
   border-radius: 100%;
 }
@@ -45,11 +45,19 @@
     color:#777;
 }
 
+.job-xinzi {
+    display: inline-block;
+    margin-left: 15rpx;
+    color:#2cb5a9; 
+}
+
 .topic-title {
     height:120rpx;
     line-height: 1.4;
     box-sizing: border-box;
     padding-top: 5rpx;
+    color:#f39800;
+    font-size: 26rpx;
     overflow:hidden;
 }
 

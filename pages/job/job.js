@@ -5,6 +5,8 @@ Page({
   data: {
     title: '最新岗位',
     job: [],
+    p:[],
+    msg:'加载中',
     hidden: false
   },
   onPullDownRefresh: function () {
@@ -21,7 +23,7 @@ Page({
       url: url
     })
   },
-  fetchData: function() {
+  fetchData: function(p) {
     var that = this;
     that.setData({
       hidden: false
@@ -33,7 +35,35 @@ Page({
       success: function(res) {
         console.log(res);
         that.setData({
-          job: res.data
+          job: res.data.data ,
+          p:res.data.page
+
+        })
+        setTimeout(function() {
+          that.setData({
+            msg:'加载中',
+            hidden: true
+          })
+        }, 300)
+      }
+    })
+  },
+  //加载更多
+  loadMore: function(p) {
+    var that = this;
+    that.setData({
+      hidden: false
+    })
+    wx.request({
+      url: Api.getPostList({
+        p: p?p:1
+      }),
+      success: function(res) {
+        //console.log(res);
+        console.log(that.data);
+        that.setData({
+          job: that.data.job.concat(res.data.data),
+          p:res.data.page
         })
         setTimeout(function() {
           that.setData({
@@ -42,7 +72,24 @@ Page({
         }, 300)
       }
     })
-  },
+},
+ onReachBottom: function() {//下拉加载更多
+  var p = this.data.p.page;
+  var count = this.data.p.end_page;
+  var that = this;
+  count = 2;
+  if (p > count){
+        wx.showToast({
+          title:'没有更多了',
+          icon:'success',
+          duration:2000
+        }); 
+      return false;
+  }
+    this.loadMore(p+1);
+     console.log(p+'--'+count);
+
+ },
   onLoad: function () {
     this.fetchData();
   }

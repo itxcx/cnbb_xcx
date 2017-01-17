@@ -3,9 +3,8 @@
   <view class="topic-detail">
     <view class="topic-owner">
         <image class="owner-avatar" src="{{detail.data.org.m_logo_url}}" id="{{detail.data.id}}" bindtap="showUserInfo"></image>
-        <view class="topic-tit">{{detail.data.name}}</view>
-        <view class="topic-nor">{{detail.data.last_time}}</view>
-        <view class="topic">{{detail.salary}}</view>
+        <view class="topic-title">{{detail.data.name}}</view>
+        <view class="job-xinzi">{{detail.data.salary}} {{detail.data.last_time}}</view>
     </view>
     <view>
         <text class="topic-desc-title">{{detail.salary}}</text>
@@ -24,11 +23,8 @@
     </view>
   </view>
   <view class="job-deliver">
-    <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 收藏 </button>
-
 <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="primary"> 立即投递 </button>
+        disabled="{{disabled}}" bindtap="sub_deliver"> {{btn_name}} </button>
   </view>
 <loading hidden="{{hidden}}">
     加载中...
