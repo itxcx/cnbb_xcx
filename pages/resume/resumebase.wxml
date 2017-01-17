@@ -1,5 +1,5 @@
 <form bindsubmit="formBindsubmit" bindreset="formReset">
-<scroll-view class="resume-edit" scroll-y="true">
+<scroll-view class="resume-edit" scroll-y="true" bindscrolltolower="refresh">
   <view class="edit-item">
   <span class="field-name">姓名</span>
      <input class="field-input" name="fullname" type="text" value="{{resumebase.fullname}}" placeholder=""></input>

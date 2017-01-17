@@ -39,11 +39,11 @@
        </view>
        <view class="field-bar">
        <span class="field-name">实习居住地</span>
-        <span class="field-cont">{{detail.info.province_name}}{{detail.info.city_name}}{{detail.info.address}}</span>
+        <span class="field-cont">{{address}}</span>
         </view>
      <view class="field-bar">
         <span class="field-name">户口所在地</span>
-        <span class="field-cont">{{detail.info.hk_province_name}}{{detail.info.hk_city_name}}</span>
+        <span class="field-cont">{{hukouAddress}}</span>
             </view>
           <view class="field-bar">
            <span class="field-name">户口类型</span>
@@ -62,12 +62,12 @@
             <span class="field-cont">{{description}}</span>
        </view>-->
        </view>
-       </view>
+       </view> 
 <!--教育经历-->
 <view class="resume-block">
     <p class="block-title">教育经历</p>
     <view class="block-info">
-    <view class="resume-edit"><navigator url="../resume/resumeedu"  >编辑</navigator></view>
+    <view class="resume-edit"><navigator url="../resume/resumeedu?edu_id={{edu_id}}&resume_id=={{detail.base_info.id}}">编辑</navigator></view>
   <view class="field-bar my-name">
     <span class="field-name">学校</span>
       <span class="field-cont" wx:if="{{detail.edus.length>0}}">{{detail.edus[0].school_name}}</span>
