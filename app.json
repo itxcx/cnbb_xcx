@@ -2,8 +2,6 @@
   "pages":[
     "pages/job/job",
     "pages/resume/resumebase",
-    "pages/node/node",
-    "pages/topicList/topicList",
     "pages/detail/detail",
      "pages/resume/resume"
   ],
