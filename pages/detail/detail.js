@@ -1,7 +1,6 @@
 // detail.js
 var Util = require('../../utils/util.js');
 var Api = require('../../utils/api.js');
-var Com = require('../../utils/common.js');
 
 Page({
   data: {
@@ -71,6 +70,10 @@ Page({
         }  
         else
         {
+          that.setData({
+            btn_name:'已投递',
+            disabled:true
+          });
           wx.showToast({
             title:'投递成功',
             icon:'success',
