@@ -84,8 +84,8 @@ function _deliver(o){
 function _getPostDetail(o)
 {
 	//return 'http://www.cainiaobangbang.com/weiapp/job/Jobdetail'+'?'+_obj2uri(o);
-	//return POST_URI+"/"+id;
-	return API_URI+GET_JOBDESC+'?'+_obj2uri(o);
+	return POST_URI+o.id+'?'+_obj2uri(o);
+	//return API_URI+GET_JOBDESC+'?'+_obj2uri(o);
 }
 //学校区域
 function _getSchoolAreas()

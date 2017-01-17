@@ -2,9 +2,9 @@
 <view class="container">
   <view class="topic-detail">
     <view class="topic-owner">
-        <image class="owner-avatar" src="{{detail.data.org.m_logo_url}}" id="{{detail.data.id}}" bindtap="showUserInfo"></image>
-        <view class="topic-title">{{detail.data.name}}</view>
-        <view class="job-xinzi">{{detail.data.salary}} {{detail.data.last_time}}</view>
+        <image class="owner-avatar" src="{{detail.org.m_logo_url}}" id="{{detail.id}}" bindtap="showUserInfo"></image>
+        <view class="topic-title">{{detail.name}}</view>
+        <view class="job-xinzi">{{detail.salary}} {{detail.last_time}}</view>
     </view>
     <view>
         <text class="topic-desc-title">{{detail.salary}}</text>
@@ -15,11 +15,11 @@
     </view>
     <view >
         <text class="desc-title">岗位描述\n\n</text>
-        <text class="job-desc">{{detail.data.remark}}</text>
+        <text class="job-desc">{{detail.remark}}</text>
     </view>
     <view >
         <text class="desc-title">\n\n岗位要求\n\n</text>
-        <text class="job-desc">{{detail.data.post_remark}}</text>
+        <text class="job-desc">{{detail.post_remark}}</text>
     </view>
   </view>
   <view class="job-deliver">

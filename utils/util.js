@@ -123,7 +123,25 @@ function getDateDiff(dateTimeStamp){
   result="刚刚";
   return result;
 }
-
+//薪资
+function salary2Str(start,end,type){
+  var str = '';
+  if ( start > 0 ) {
+    if ( end > 0 ){
+      str = start+'-'+end;
+    }else{
+      str = start;
+    }
+    if ( type == 0 ){
+      str += '元/天';
+    }else{
+      str += '元/月';
+    }
+  }else{
+    str  = "面议";
+  }
+  return str;
+}
 //json转form
 function json2Form(json) {  
     var str = [];  
@@ -144,5 +162,6 @@ module.exports = {
   formatDate2: formatDate2,
   getDateTimeStamp:getDateTimeStamp,
   getDateDiff:getDateDiff,
+  salary2Str:salary2Str,
 
 }
