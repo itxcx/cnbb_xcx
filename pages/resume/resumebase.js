@@ -243,6 +243,13 @@ Page({
             icon:'success',
             duration:2000
          });*/
+         var pages = getCurrentPages();
+        if(pages.length > 1){
+            //上一个页面实例对象
+            var prePage = pages[pages.length - 2];
+            //关键在这里
+            prePage.fetchData()
+        }
          wx.navigateBack();
         }
 

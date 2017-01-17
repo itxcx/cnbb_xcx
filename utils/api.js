@@ -5,8 +5,8 @@ var RESUME_URI='http://183.195.157.158:5555/v1/resume/';
 var FILE_URI='http://183.195.157.158:8081/v1/file/';
 var INFRA_URL="http://183.195.157.158:8182/v1/infrastructure/";
 var PASSPORT_URL="http://183.195.157.158:8181/v1/passport/";
-var //access_token="L0RsWlh2S0xpeVFPU2tubDhNRldMZz09_A_09388f9a02";
-access_token="ZEY2NUdQUWFtTkNONkFxNVFDbGdHQT09_A_0d9d029f49";
+var access_token="L0RsWlh2S0xpeVFPU2tubDhNRldMZz09_A_09388f9a02";
+//access_token="ZEY2NUdQUWFtTkNONkFxNVFDbGdHQT09_A_0d9d029f49";
 // 获取节点
 // 所有的节点
 var ALL_NODE = 'nodes/all.json';
