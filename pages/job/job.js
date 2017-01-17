@@ -38,6 +38,7 @@ Page({
         for (var i = 0; i < res.data.posts.length ; i++) {
           //console.log(Util.getDateTimeStamp(res.data.posts[i].last_time));
           res.data.posts[i].last_time = Util.getDateDiff(Util.getDateTimeStamp(res.data.posts[i].last_time));
+          res.data.posts[i].salary = Util.salary2Str(res.data.posts[i].ssalary,res.data.posts[i].esalary,res.data.posts[i].salary_unit);
         }
         //res.data.data.last_time
         that.setData({

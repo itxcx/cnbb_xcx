@@ -6,7 +6,7 @@ Page({
   data: {
     title: '岗位详情',
     detail: {},
-    replies: [],
+    resume_id: true,
     btn_name:'立即投递',
     loading:false,
     hidden: false
@@ -19,11 +19,11 @@ Page({
         access_token:Api.getAccessToken(),
       }),
       success: function(res) {
-        //res.data[0].created = Util.formatTime(Util.transLocalTime(res.data[0].created));
+        res.data.last_time = Util.getDateDiff(Util.getDateTimeStamp(res.data.last_time));
         console.log(res);
         var btn_disabled = false;
         var btn = '立即投递';
-        if ( res.data.data.is_delivered ){
+        if ( res.data.is_delivered ){
           btn = '已投递';
           btn_disabled = true;
         }
@@ -39,7 +39,19 @@ Page({
         }, 300)
       }
     })
-    //that.fetchReplies(id);
+    that.fetchDefaultResumeDetail();
+  },
+  fetchDefaultResumeDetail:function(){
+    var that = this;
+    wx.request({
+      url: Api.getUserDefaultResumeDetail(),
+      success: function(res) {
+        console.log(res);
+        that.setData({
+          resume_id: res.data.id
+        })
+      }
+    })
   },
   sub_deliver:function(){
      var that = this; 
@@ -53,8 +65,8 @@ Page({
       data:Util.json2Form(
         {
         access_token:Api.getAccessToken(),
-        post_id: that.data.detail.data.id,
-        resume_id:that.data.detail.data.resume_id,
+        post_id: that.data.detail.id,
+        resume_id:that.data.resume_id,
         device:99
       }),
       complete: function( res ) { 
