@@ -31,6 +31,10 @@ var GET_USERINFO = 'members/show.json';
 var GET_JOBLIST = 'joblist';
 //获取岗位详情
 var GET_JOBDESC = 'jobdetail';
+//收藏岗位
+var POST_FAV = ''
+
+
 function _obj2uri(obj){
 	return Object.keys(obj).map(function(k) {
 		return encodeURIComponent(k) + "=" + encodeURIComponent(obj[k]);
@@ -51,8 +55,8 @@ function _getTopicInfo(o) {
 } 
 //岗位列表
 function _getPostList(o){
-	return 'http://www.cainiaobangbang.com/api/' + GET_JOBLIST;
-	//return API_URI+GET_JOBLIST;
+	//return 'http://www.cainiaobangbang.com/api/' + GET_JOBLIST;
+	return API_URI+GET_JOBLIST+'?'+_obj2uri(o);
 }
 
 function _getHotestTopic(o) {
