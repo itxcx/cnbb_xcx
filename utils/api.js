@@ -185,6 +185,6 @@ module.exports = {
 	updateAvatar:_updateAvatar,
 	 getProvinces:_getProvinces,
 	 getSchool:_getSchool,
-	 getMajorCategories:_getMajorCategories
+	 getMajorCategories:_getMajorCategories,
 	deliver:_deliver
 };
