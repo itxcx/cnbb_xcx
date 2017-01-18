@@ -226,10 +226,10 @@ Page({
       city_id:that.data.cityCodes[that.data.cityIndex],hk_type:that.data.hukou,hk_province_id:that.data.provinceCodes[that.data.hkprovinceIndex],hk_city_id:that.data.hkcityCodes[that.data.hkcityIndex],card_type:0,card_no:e.detail.value.card_no,
       address:e.detail.value.address,access_token:Api.getAccessToken() }),  
       complete: function( res ) { 
-          console.log(res);
+          console.log(res.data.error_description);
         if( res == null || res.data.error_code!="success" ) { 
           wx.showToast({
-            title:'更新失败',
+            title:res.data.error_description,
             icon:'loading',
             duration:2000
           }); 
