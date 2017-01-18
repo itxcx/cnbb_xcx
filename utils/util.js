@@ -45,6 +45,22 @@ function formatShortDate(date){
 function transLocalTime(t) {
   return new Date(t * 1000);
 }
+//转换职位类型
+function transWorkType(n)
+{
+  var str = '';
+  switch ( n ) {
+      case '0':
+          str = '不限';break;
+      case '1':
+          str = '假期';break;
+      case '2':
+          str = '日常';break;
+      default:
+          str = '不限';
+  }
+  return str;
+}
 //转换政治面貌
 function transPolitics(n)
 {
@@ -163,5 +179,6 @@ module.exports = {
   getDateTimeStamp:getDateTimeStamp,
   getDateDiff:getDateDiff,
   salary2Str:salary2Str,
+  transWorkType:transWorkType,
 
 }

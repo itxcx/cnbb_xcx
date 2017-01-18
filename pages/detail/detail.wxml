@@ -10,10 +10,10 @@
                 <text class="job-pay">{{detail.last_time}}</text>
             </view>
             <view class="job-demand">
-                <text class="sub-demand">本科</text>
-                <text class="sub-demand">日常</text>
-                <text class="sub-demand">3天/周</text>
-                <text class="sub-demand">至少3个月</text>
+                <text class="sub-demand">{{detail.degree}}</text>
+                <text class="sub-demand">{{detail.work_type}}</text>
+                <text class="sub-demand" wx:if="{{detail.work_days}}">{{detail.work_days}}天/周</text>
+                <text class="sub-demand" wx:if="{{detail.work_duration}}">至少{{detail.work_duration/30}}个月</text>
             </view>
         </view>
     </view>

@@ -22,6 +22,8 @@ Page({
       success: function(res) {
         res.data.last_time = Util.getDateDiff(Util.getDateTimeStamp(res.data.last_time));
         res.data.salary = Util.salary2Str(res.data.ssalary,res.data.esalary,res.data.salary_unit);
+        res.data.degree = Util.transDegree(res.data.degree);//学历
+        res.data.work_type = Util.transWorkType(res.data.work_type);//工作类型
         console.log(res);
         var btn_disabled = false;
         var btn = '投递简历';
@@ -41,7 +43,6 @@ Page({
         }, 300)
       }
   })
-    //that.fetchReplies(id);
     that.fetchDefaultResumeDetail();
   },
 
