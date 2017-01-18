@@ -7,7 +7,7 @@
             <view><text class="job-name">人力资源热线电话实习生</text></view>
             <view>
                 <text class="job-pay">{{detail.salary}}</text>
-                <text class="job-pay">{{detail.last_time}}</text>
+                <text class="job-time">{{detail.last_time}}</text>
             </view>
             <view class="job-demand">
                 <text class="sub-demand">{{detail.degree}}</text>
@@ -15,6 +15,14 @@
                 <text class="sub-demand" wx:if="{{detail.work_days}}">{{detail.work_days}}天/周</text>
                 <text class="sub-demand" wx:if="{{detail.work_duration}}">至少{{detail.work_duration/30}}个月</text>
             </view>
+        </view>
+    </view>
+    <view class="owner-org">
+        <view>
+            <text class="org-name">{{detail.org.fullname}}</text>
+        </view>
+        <view>
+            <text class="org-addr">{{detail.city_name}}-{{detail.zone_name}}-{{detail.addr}}</text>
         </view>
     </view>
     <view class="topic-info">
@@ -26,11 +34,11 @@
     </view>
     <view >
         <text class="desc-title">\n\n岗位要求\n\n</text>
-        <text class="job-desc">{{detail.post_remark}}</text>
+        <text class="job-desc">{{detail.post_remark}}\n\n\n</text>
     </view>
   </view>
   <view class="job-deliver">
-<button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+    <button type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
         disabled="{{disabled}}" bindtap="sub_deliver"> {{btn_name}} </button>
   </view>
 <loading hidden="{{hidden}}">

@@ -38,14 +38,9 @@
 }
 
 .job-desc {
-    line-height: 1.5;
+    line-height: 1.8;
     font-size:.75rem;
     color:#717171;
-}
-
-.job-time {
-color:#555;
- position:fixed; right:0;
 }
 
 .job-deliver {
@@ -128,6 +123,13 @@ width:100%; position:fixed; left:0; bottom:0;
     line-height: 2.4;
 }
 
+.job-time{
+    margin: 0 40rpx;
+    font-size: .75rem;
+    color: #999;
+    line-height: 2.4;
+}
+
 .sub-demand{
     margin-right: 20rpx;
     font-size: .875rem;
@@ -137,4 +139,22 @@ width:100%; position:fixed; left:0; bottom:0;
 .welfare{
     font-size: .75rem;
     color: #717171;
+    line-height: 1.8;
+}
+
+.owner-org{
+    margin-bottom: 30rpx;
+    padding: 20rpx 0;
+    border-top: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+.org-name{
+    line-height: 1.8;
+}
+
+.org-addr{
+    font-size: .75rem;
+    color: #717171;
+    line-height: 1.8;
 }

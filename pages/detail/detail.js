@@ -48,36 +48,31 @@ Page({
 
   fetchDefaultResumeDetail:function(){//设置resume_id
     var that = this;
-    var resume_id = '';
-    wx.getStorage({
-      key: 'resume_id',
-      success: function(res) {
-          // 从数据缓存里拿到resume_id
-          resume_id = res.data;
-      } 
-    });
-    if ( resume_id ){
-        //缓存里的resume_id
-        that.setData({
-          resume_id: resume_id
-        })
-    }else{
-        wx.request({
-          url: Api.getUserDefaultResumeDetail(),
-          success: function(res) {
-            console.log(res);
-            // 设置数据缓存resume_id
-            wx.setStorage({
-              key:"resume_id",
-              data:res.data.id
-            });
-            that.setData({
-              resume_id: res.data.id
-            })
-          }
-        })
+    // var resume_id = '';
+    try {
+      var resume_id = wx.getStorageSync('resume_id')
+      if (resume_id) {
+          //缓存里的resume_id
+          that.setData({
+            resume_id: resume_id
+          })
+      }
+    } catch (e) {
+          wx.request({
+            url: Api.getUserDefaultResumeDetail(),
+            success: function(res) {
+              console.log(res);
+              // 设置数据缓存resume_id
+              wx.setStorageSync({
+                key:"resume_id",
+                data:res.data.id
+              });
+              that.setData({
+                resume_id: res.data.id
+              })
+            }
+          })
     }
-
   },
   sub_deliver:function(){
      var that = this; 
@@ -98,11 +93,6 @@ Page({
       complete: function( res ) { 
           console.log(res);
         if( res == null || res.data.error_code!="success" ) { 
-          // wx.showToast({
-          //   title:'投递失败',
-          //   icon:'loading',
-          //   duration:2000
-          // }); 
           wx.showModal({
            title: '提示',
            content: res.data.error_description,

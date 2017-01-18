@@ -50,11 +50,11 @@ function transWorkType(n)
 {
   var str = '';
   switch ( n ) {
-      case '0':
+      case 0:
           str = '不限';break;
-      case '1':
+      case 1:
           str = '假期';break;
-      case '2':
+      case 2:
           str = '日常';break;
       default:
           str = '不限';
