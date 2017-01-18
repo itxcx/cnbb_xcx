@@ -8,7 +8,7 @@ Page({
     detail: {},
     replies: [],
     resume_id: true,
-    btn_name:'立即投递',
+    btn_name:'投递简历',
     loading:false,
     hidden: false
   },
@@ -20,11 +20,10 @@ Page({
         access_token:Api.getAccessToken(),
       }),
       success: function(res) {
-        //res.data[0].created = Util.formatTime(Util.transLocalTime(res.data[0].created));
         res.data.last_time = Util.getDateDiff(Util.getDateTimeStamp(res.data.last_time));
         console.log(res);
         var btn_disabled = false;
-        var btn = '立即投递';
+        var btn = '投递简历';
         if ( res.data.is_delivered ){
           btn = '已投递';
           btn_disabled = true;
@@ -90,8 +89,6 @@ Page({
       data:Util.json2Form(
         {
         access_token:Api.getAccessToken(),
-        post_id: that.data.detail.data.id,
-        resume_id:that.data.detail.data.resume_id,
         post_id: that.data.detail.id,
         resume_id:that.data.resume_id,
         device:99
@@ -127,34 +124,6 @@ Page({
       }  
     })
   }, 
-  btn_primary:function(){
-    var that = this;
-
-    this.setData({
-      text:'您单击了primary按钮'
-    })
-  },
-  // fetchReplies: function(id) {
-  //   var that = this;
-  //   wx.request({
-  //     url: Api.getReplies({
-  //       topic_id: id
-  //     }),
-  //     success: function(res) {
-  //       res.data.forEach(function(item) {
-  //         item.created = Util.formatTime(Util.transLocalTime(item.created));
-  //       })
-  //       that.setData({
-  //         replies: res.data
-  //       })
-  //       setTimeout(function() {
-  //         that.setData({
-  //           hidden: true
-  //         })
-  //       }, 300)
-  //     }
-  //   })
-  // },
   onLoad: function (options) {
     this.setData({
       hidden: false
