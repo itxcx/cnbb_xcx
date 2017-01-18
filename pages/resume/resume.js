@@ -31,7 +31,7 @@ Page({
       success: function(res) {
         that.setData({
           detail: res.data,
-          source:res.data==undefined||res.data.info.avatar_url==''?that.data.source1:res.data.info.avatar_url,
+          source:res.data==undefined&&res.data.info.avatar_url==''?that.data.source1:res.data.info.avatar_url,
           formatDate:Util.formatDate(res.data.info.birthday),
           politics:Util.transPolitics(res.data.info.politics),
           
