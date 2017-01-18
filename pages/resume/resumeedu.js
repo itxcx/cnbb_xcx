@@ -208,10 +208,10 @@ faculty:e.detail.value.faculty,major_cid:that.data.majorCodes[that.data.majorInd
       complete: function( res ) { 
           console.log(res.data.error_description);
         if( res == null || res.data.error_code!="success" ) { 
-          wx.showToast({
-            title:res.data.error_description,
-            icon:'loading',
-            duration:1000
+          wx.showModal({
+            title:"提醒",
+            content:res.data.error_description,
+            showCancel:false
           }); 
           console.error( res.data );  
           return;  
