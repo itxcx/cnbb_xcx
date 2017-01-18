@@ -21,11 +21,6 @@
         </view>
     </view>
     <view>
-    <!--<view>
-        <text class="topic-desc-title">{{detail.salary}}</text>
-        <text class="topic-created">{{detail.created}}</text>
-    </view>
-    </view>-->
     <view class="topic-info">
         <text >{{detail.weal_tags}}</text>
         <text class="welfare">{{detail.weal_tags}}</text>
