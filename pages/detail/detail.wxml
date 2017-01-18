@@ -4,7 +4,7 @@
     <view class="topic-owner">
         <image class="owner-avatar" src="{{detail.org.m_logo_url}}" id="{{detail.id}}" bindtap="showUserInfo"></image>
         <view class="topic-title">{{detail.name}}</view>
-        <view class="job-xinzi">{{detail.salary}} {{detail.last_time}}</view>
+        <view class="job-xinzi">{{detail.last_time}}</view>
     </view>
     <view>
         <text class="topic-desc-title">{{detail.salary}}</text>

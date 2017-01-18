@@ -21,6 +21,7 @@ Page({
       }),
       success: function(res) {
         res.data.last_time = Util.getDateDiff(Util.getDateTimeStamp(res.data.last_time));
+        res.data.salary = Util.salary2Str(res.data.ssalary,res.data.esalary,res.data.salary_unit);
         console.log(res);
         var btn_disabled = false;
         var btn = '投递简历';
@@ -96,11 +97,23 @@ Page({
       complete: function( res ) { 
           console.log(res);
         if( res == null || res.data.error_code!="success" ) { 
-          wx.showToast({
-            title:'投递失败',
-            icon:'loading',
-            duration:2000
-          }); 
+          // wx.showToast({
+          //   title:'投递失败',
+          //   icon:'loading',
+          //   duration:2000
+          // }); 
+          wx.showModal({
+           title: '提示',
+           content: res.data.error_description,
+           success: function(res) {
+            if (res.confirm) {
+              var url = '../resume/resume';
+                wx.navigateTo({
+                  url: url
+                })
+            }
+           }
+          })
           console.error( res.data );  
           return;  
         }  
