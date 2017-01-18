@@ -5,7 +5,20 @@
         <view class="topic-item" index="{{index}}" id="{{item.id}}" catchtap="redictDetail">
             <image class="member-avatar" src="{{item.org.m_logo_url}}" background-size="cover"></image>
             <view class="topic-info">
-                <view class="topic-inner">
+                <view class="job-item">
+                    <view>
+                        <text class="job-name">{{item.name}}</text></view>
+                    <view><text class="job-pay">{{item.salary}}</text></view>
+                </view>
+                 <view class="job-item org-basic">
+                    <view><text class="job-ogr">{{item.org.fullname}}</text></view>
+                    <view><text class="job-addr">{{item.city_name}}-{{item.zone_name}}</text></view>
+                </view>
+                <view class="job-item">
+                    <view><text class="job-demand">{{item.field}}</text></view>
+                    <view><text class="job-time">{{item.last_time}}</text></view>
+                </view>
+                <!--<view class="topic-inner">
                     <view class="topic-left">
                         <view class="topic-title">
                         <text>{{item.name}}</text>
@@ -17,7 +30,7 @@
                         </view>
                     </view>
                     <view class="reply-num">{{item.last_time}}</view>
-                </view>
+                </view>-->
             </view>
         </view>
       </block>

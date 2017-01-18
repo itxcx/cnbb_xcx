@@ -49,21 +49,27 @@ Page({
   fetchDefaultResumeDetail:function(){//设置resume_id
     var that = this;
     // var resume_id = '';
+    var resume_id = wx.getStorageSync('resume_id');
+    // try {
+    //   wx.removeStorageSync('resume_id');
+    // } catch (e) {
+    //   // Do something when catch error
+    // }
     try {
-      var resume_id = wx.getStorageSync('resume_id')
+      
+      console.log(resume_id);
       if (resume_id) {
           //缓存里的resume_id
           that.setData({
             resume_id: resume_id
           })
-      }
-    } catch (e) {
+      }else{
           wx.request({
             url: Api.getUserDefaultResumeDetail(),
             success: function(res) {
               console.log(res);
               // 设置数据缓存resume_id
-              wx.setStorageSync({
+              wx.setStorage({
                 key:"resume_id",
                 data:res.data.id
               });
@@ -72,7 +78,10 @@ Page({
               })
             }
           })
+      }
+    } catch (e) {
     }
+    //wx.removeStorageSync('resumeDetail');
   },
   sub_deliver:function(){
      var that = this; 
@@ -96,8 +105,8 @@ Page({
           wx.showModal({
            title: '提示',
            content: res.data.error_description,
-           success: function(res) {
-            if (res.confirm) {
+           success: function(e) {
+            if (e.confirm) {
               var url = '../resume/resume';
                 wx.navigateTo({
                   url: url

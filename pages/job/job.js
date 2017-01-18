@@ -39,6 +39,14 @@ Page({
           //console.log(Util.getDateTimeStamp(res.data.posts[i].last_time));
           res.data.posts[i].last_time = Util.getDateDiff(Util.getDateTimeStamp(res.data.posts[i].last_time));
           res.data.posts[i].salary = Util.salary2Str(res.data.posts[i].ssalary,res.data.posts[i].esalary,res.data.posts[i].salary_unit);
+          res.data.posts[i].degree = Util.transDegree(res.data.posts[i].degree);//学历
+          res.data.posts[i].field = res.data.posts[i].degree;
+          if(res.data.posts[i].work_days > 0){
+            res.data.posts[i].field += '|'+res.data.posts[i].work_days+'天/周';
+          }
+          if(res.data.posts[i].work_duration > 0){
+            res.data.posts[i].field += '|至少'+res.data.posts[i].work_duration/30+'个月';
+          }
         }
         //res.data.data.last_time
         that.setData({
@@ -71,6 +79,14 @@ Page({
           //console.log(Util.getDateTimeStamp(res.data.posts[i].last_time));
           res.data.posts[i].last_time = Util.getDateDiff(Util.getDateTimeStamp(res.data.posts[i].last_time));
           res.data.posts[i].salary = Util.salary2Str(res.data.posts[i].ssalary,res.data.posts[i].esalary,res.data.posts[i].salary_unit);
+          res.data.posts[i].degree = Util.transDegree(res.data.posts[i].degree);//学历
+          res.data.posts[i].field = res.data.posts[i].degree;
+          if(res.data.posts[i].work_days > 0){
+            res.data.posts[i].field += '|'+res.data.posts[i].work_days+'天/周';
+          }
+          if(res.data.posts[i].work_duration > 0){
+            res.data.posts[i].field += '|至少'+res.data.posts[i].work_duration/30+'个月';
+          }
         }
         console.log(that.data);
         that.setData({
