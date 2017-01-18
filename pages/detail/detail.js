@@ -25,7 +25,6 @@ Page({
         console.log(res);
         var btn_disabled = false;
         var btn = '立即投递';
-        if ( res.data.data.is_delivered ){
         if ( res.data.is_delivered ){
           btn = '已投递';
           btn_disabled = true;
@@ -41,7 +40,6 @@ Page({
           })
         }, 300)
       }
-    }
   })
     //that.fetchReplies(id);
     that.fetchDefaultResumeDetail();
