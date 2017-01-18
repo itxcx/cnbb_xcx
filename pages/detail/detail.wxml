@@ -3,15 +3,27 @@
   <view class="topic-detail">
     <view class="topic-owner">
         <image class="owner-avatar" src="{{detail.org.m_logo_url}}" id="{{detail.id}}" bindtap="showUserInfo"></image>
-        <view class="topic-title">{{detail.name}}</view>
-        <view class="job-xinzi">{{detail.salary}} {{detail.last_time}}</view>
+        <!--<view class="topic-title">{{detail.name}}</view>
+        <view class="job-xinzi">{{detail.salary}} {{detail.last_time}}</view>-->
+        <view class="owner-info">
+            <view><text class="job-name">人力资源热线电话实习生</text></view>
+            <view>
+                <text class="job-pay">{{detail.salary}}</text>
+            </view>
+            <view class="job-demand">
+                <text class="sub-demand">本科</text>
+                <text class="sub-demand">日常</text>
+                <text class="sub-demand">3天/周</text>
+                <text class="sub-demand">至少3个月</text>
+            </view>
+        </view>
     </view>
-    <view>
+    <!--<view>
         <text class="topic-desc-title">{{detail.salary}}</text>
         <text class="topic-created">{{detail.created}}</text>
-    </view>
+    </view>-->
     <view class="topic-info">
-        <text >{{detail.weal_tags}}</text>
+        <text class="welfare">{{detail.weal_tags}}</text>
     </view>
     <view >
         <text class="desc-title">岗位描述\n\n</text>
