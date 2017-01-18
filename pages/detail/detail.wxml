@@ -3,10 +3,6 @@
   <view class="topic-detail">
     <view class="topic-owner">
         <image class="owner-avatar" src="{{detail.org.m_logo_url}}" id="{{detail.id}}" bindtap="showUserInfo"></image>
-        <view class="topic-title">{{detail.name}}</view>
-        <view class="job-xinzi">{{detail.salary}} {{detail.last_time}}</view>
-        <!--<view class="topic-title">{{detail.name}}</view>
-        <view class="job-xinzi">{{detail.salary}} {{detail.last_time}}</view>-->
         <view class="owner-info">
             <view><text class="job-name">人力资源热线电话实习生</text></view>
             <view>
@@ -20,9 +16,7 @@
             </view>
         </view>
     </view>
-    <view>
     <view class="topic-info">
-        <text >{{detail.weal_tags}}</text>
         <text class="welfare">{{detail.weal_tags}}</text>
     </view>
     <view >
