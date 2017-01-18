@@ -206,12 +206,12 @@ Page({
 degree:that.data.degreeCodes[that.data.degreeIndex],
 faculty:e.detail.value.faculty,major_cid:that.data.majorCodes[that.data.majorIndex],major:e.detail.value.major }),  
       complete: function( res ) { 
-          console.log(res);
+          console.log(res.data.error_description);
         if( res == null || res.data.error_code!="success" ) { 
           wx.showToast({
-            title:'更新失败',
+            title:res.data.error_description,
             icon:'loading',
-            duration:2000
+            duration:1000
           }); 
           console.error( res.data );  
           return;  
