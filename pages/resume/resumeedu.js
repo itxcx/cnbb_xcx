@@ -209,7 +209,7 @@ faculty:e.detail.value.faculty,major_cid:that.data.majorCodes[that.data.majorInd
           console.log(res);
         if( res == null || res.data.error_code!="success" ) { 
           wx.showToast({
-            title:'更新失败',
+            title:res.data.error_description,
             icon:'loading',
             duration:2000
           }); 
