@@ -41,7 +41,8 @@ Page({
           })
         }, 300)
       }
-    })
+    }
+  })
     //that.fetchReplies(id);
     that.fetchDefaultResumeDetail();
   },
