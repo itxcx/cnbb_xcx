@@ -6,7 +6,7 @@ var FILE_URI='http://183.195.157.158:8081/v1/file/';
 var INFRA_URL="http://183.195.157.158:8182/v1/infrastructure/";
 var PASSPORT_URL="http://183.195.157.158:8181/v1/passport/";
 var access_token="L0RsWlh2S0xpeVFPU2tubDhNRldMZz09_A_09388f9a02";
-access_token="ZEY2NUdQUWFtTkNONkFxNVFDbGdHQT09_A_0d9d029f49";
+access_token="Kzl1VkRZQkt6SW9NQTRXWDVDVXRZdz09_A_8dda85878e";
 //access_token="NXR5aElMbmxsQU5kTFhOMlovQll0dz09_A_f1df84a3dd";
 
 // 获取节点

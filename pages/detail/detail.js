@@ -104,13 +104,17 @@ Page({
           console.log(res);
         if( res == null || res.data.error_code!="success" ) { 
           wx.showModal({
-           title: '提示',
-           content: res.data.error_description,
-           showCancel:false,
+           title: '请完善简历',
+           //content: res.data.error_description,
+           content:'请完善简历,再投递简历噢~',
+           confirmText:'完善简历',
+           //showCancel:false,
            confirmColor:'#f39800',
            success: function(e) {
             if (e.confirm) {
-              console.log('用户点击了确定');
+              wx.switchTab({
+                url: '../resume/resume'
+              })
             }
            }
           })
