@@ -104,9 +104,9 @@ Page({
 },
  onReachBottom: function() {//下拉加载更多
   var that = this;
-  var p = that.data.page;
+  var p = that.data.page+1;
   var count = that.data.end_page;
-  count = 2;
+  //count = 2;
   if (p > count){
         wx.showToast({
           title:'没有更多了',
@@ -115,8 +115,8 @@ Page({
         }); 
       return false;
   }
-    this.loadMore(p+1);
-     console.log(p+'--'+count);
+    this.loadMore(p);
+     //console.log(p+'--'+count);
 
  },
   onLoad: function () {

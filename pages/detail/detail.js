@@ -49,12 +49,13 @@ Page({
   fetchDefaultResumeDetail:function(){//设置resume_id
     var that = this;
     // var resume_id = '';
+    
+    try {
+      wx.removeStorageSync('resume_id');
+    } catch (e) {
+      // Do something when catch error
+    }
     var resume_id = wx.getStorageSync('resume_id');
-    // try {
-    //   wx.removeStorageSync('resume_id');
-    // } catch (e) {
-    //   // Do something when catch error
-    // }
     try {
       
       console.log(resume_id);
@@ -105,12 +106,11 @@ Page({
           wx.showModal({
            title: '提示',
            content: res.data.error_description,
+           showCancel:false,
+           confirmColor:'#f39800',
            success: function(e) {
             if (e.confirm) {
-              var url = '../resume/resume';
-                wx.navigateTo({
-                  url: url
-                })
+              console.log('用户点击了确定');
             }
            }
           })
