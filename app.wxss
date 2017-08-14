@@ -14,5 +14,6 @@
     justify-content: center;
     font-size: 36rpx;
     background-color: #000;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee;  
+    
 }
